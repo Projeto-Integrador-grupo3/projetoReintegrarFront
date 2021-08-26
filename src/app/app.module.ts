@@ -8,6 +8,10 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { MenuLogadoComponent } from './menu-logado/menu-logado.component';
+import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
+import { ContatoComponent } from './contato/contato.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { CVComponent } from './c-v/c-v.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { MenuLogadoComponent } from './menu-logado/menu-logado.component';
     RodapeComponent,
     CadastrarComponent,
     EntrarComponent,
-    MenuLogadoComponent
+    MenuLogadoComponent,
+    PaginaInicialComponent,
+    ContatoComponent,
+    SobreNosComponent,
+    CVComponent
   ],
   imports: [
     BrowserModule,
