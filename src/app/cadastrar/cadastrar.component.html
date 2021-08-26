@@ -1,1 +1,45 @@
-<p>cadastrar works!</p>
+<div class="container-fluid d-flex align-items-center justify-content-center" id="img-bg">
+    <div class="card col-4 mt-9">
+
+        <div class="card-body">
+            <div class="row d-flex  justify-content-center">
+                <div class="col-md-6">
+
+                    <h1 class="text-center mb-3 mt-5">Cadastrar</h1>
+
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input class="form-control" type="text" name="nome" id="nome"
+                            placeholder="Nome Completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input class="form-control" type="text" name="email" id="usuario"
+                            placeholder="Endereço de E-mail">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmarSenha"> Confirmar Senha</label>
+                        <input class="form-control" type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confirme sua senha">
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-5">
+                        <button type="submit" class="btn btn-success mr-4">Entrar</button>
+                        <button type="submit" class="btn btn-danger">Cancelar</button>
+                    </div>
+
+                    <hr class="mt-5 mb-5">
+                    <p class="text-center">Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se</a></p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
