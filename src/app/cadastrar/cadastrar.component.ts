@@ -36,6 +36,17 @@ export class CadastrarComponent implements OnInit {
   }
 
   cadastrar(){
+    if (this.usuario.nome.length < 6) {
+      alert('Preencha campo nome com pelo menos 6 caracteres')
+    }
+
+    if (this.usuario.email.indexOf('@') == - 1 || this.usuario.email.indexOf('.') == -1) {
+      alert('Cadastre um email válido como usuário')
+    }
+
+    if (this.usuario.senha.length < 6) {
+      alert('Preencha campo senha com pelo menos 6 caracteres')
+    }
 
       this.usuario.tipo = this.tipoUser
 
@@ -50,4 +61,6 @@ export class CadastrarComponent implements OnInit {
         } )
       }
   }
+  
+
 }
