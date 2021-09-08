@@ -8,12 +8,13 @@ import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { EntrarComponent } from './entrar/entrar.component';
-import { MenuLogadoComponent } from './menu-logado/menu-logado.component';
-import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
-import { ContatoComponent } from './contato/contato.component';
-import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
-import { CVComponent } from './c-v/c-v.component';
 import { FormsModule } from '@angular/forms';
+import { MenuLogadoComponent } from './menu-logado/menu-logado.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { TemaComponent } from './tema/tema.component';
 
 
 @NgModule({
@@ -24,10 +25,13 @@ import { FormsModule } from '@angular/forms';
     CadastrarComponent,
     EntrarComponent,
     MenuLogadoComponent,
-    PaginaInicialComponent,
-    ContatoComponent,
-    SobreNosComponent,
-    CVComponent
+    PostagemEditComponent,
+    TemaEditComponent,
+    PostagemDeleteComponent,
+    TemaDeleteComponent,
+    TemaComponent
+    
+   
   ],
   imports: [
     BrowserModule,

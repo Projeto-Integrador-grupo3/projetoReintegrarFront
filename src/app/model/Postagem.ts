@@ -1,3 +1,4 @@
+import { Tema } from "./Tema"
 import { Usuario } from "./Usuario"
 
 export class Postagem{
@@ -6,5 +7,5 @@ export class Postagem{
     public titulo:string
     public data:Date
     public usuario:Usuario
-  //public categoria:Categoria
+    public tema:Tema
 }
