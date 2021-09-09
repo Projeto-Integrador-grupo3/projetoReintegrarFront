@@ -17,6 +17,8 @@ export class MenuLogadoComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    console.log(environment.foto)
+    console.log(this.foto)
   }
   
   sair(){

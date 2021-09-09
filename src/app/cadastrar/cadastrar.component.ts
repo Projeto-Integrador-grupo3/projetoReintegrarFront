@@ -13,6 +13,10 @@ export class CadastrarComponent implements OnInit {
   usuario:Usuario = new Usuario
   confirmeSenha:string
   tipoUser:string
+  generoUser: string
+  fotoUser: string
+
+  
 
   constructor(
     private authService: AuthService,
@@ -28,12 +32,18 @@ export class CadastrarComponent implements OnInit {
     
       this.confirmeSenha = event.target.value
   }
+  fotoUsuario(event:any){
+    this.fotoUser= event.target.value
+  }
 
   tipoUsuario(event:any){
 
       this.tipoUser = event.target.value
   }
+  generoUsuario(event:any){
 
+    this.generoUser = event.target.value
+}
   cadastrar(){
     if (this.usuario.nome.length < 6) {
       alert('Preencha campo nome com pelo menos 6 caracteres')
@@ -59,7 +69,9 @@ export class CadastrarComponent implements OnInit {
           alert('Usuário cadastrado com sucesso!')
         } )
       }
+    
+     
   }
   
-
+ 
 }
