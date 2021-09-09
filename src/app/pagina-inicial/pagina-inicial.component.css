@@ -5,3 +5,7 @@
 .fsh5{
     font-size: 30pt;
 }
+.box{
+    display:flex;
+    justify-content: space-between;
+}

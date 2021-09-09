@@ -15,6 +15,8 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { TemaComponent } from './tema/tema.component';
+import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { TemaComponent } from './tema/tema.component';
     TemaEditComponent,
     PostagemDeleteComponent,
     TemaDeleteComponent,
-    TemaComponent
+    TemaComponent,
+    PaginaInicialComponent
     
    
   ],
@@ -39,7 +42,10 @@ import { TemaComponent } from './tema/tema.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

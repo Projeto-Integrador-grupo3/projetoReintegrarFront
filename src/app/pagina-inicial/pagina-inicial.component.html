@@ -1,59 +1,114 @@
 <div class="container-fluid">
 
-    <div class="row bg-secondary d-flex align-items-center">
-        <div class="col-md-7">
+  <div class="row bg-secondary d-flex align-items-center">
+    <div class="col-md-7">
 
-            <div class="row d-flex justify-content-center mb-3">
-                <div class="col-md-6 text-white">
-                    <h1 class="fs">Seja bem vindo(a)!</h1>
-                    <h5 class="fsh5">Compartilhe uma história!</h5>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center mt-3 mb-5">
-                <div class="col-md-6">
-                    <button class="btn btn-light" data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
-                </div>
-            </div>
+      <div class="row d-flex justify-content-center mb-3">
+        <div class="col-md-6 text-white">
+          <h1 class="fs">Seja bem vindo(a)!</h1>
+          <h5 class="fsh5">Compartilhe uma história!</h5>
         </div>
-
-
-        <div class="col-md-5 d-flex justify-content-center mb-3">
-            <img src="https://imgur.com/aaAP8Ti.png" alt="" width="500px" height="500px">
+      </div>
+      <div class="row d-flex justify-content-center mt-3 mb-5">
+        <div class="col-md-6">
+          <button class="btn btn-light" data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
         </div>
+      </div>
     </div>
+
+
+    <div class="col-md-5 d-flex justify-content-center mb-3">
+      <img src="https://imgur.com/aaAP8Ti.png" alt="" width="500px" height="500px">
+    </div>
+  </div>
 
 </div>
 
 <div class="container mb-5 mt-5">
 
-    <nav>
-        <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+  <nav>
+    <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
 
-            <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab"
-                data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens"
-                aria-selected="true">Todas as Postagens</a>
+      <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab" data-toggle="tab"
+        href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</a>
 
-            <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab" data-toggle="tab"
-                href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas
-                Postagens</a>
+      <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab" data-toggle="tab"
+        href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas
+        Postagens</a>
 
-            <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-pesquisa-tab" data-toggle="tab"
-                href="#pesquisa" role="tab" aria-controls="nav-pesquisa" aria-selected="false">Pesquisar Postagens</a>
+      <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-pesquisa-tab" data-toggle="tab"
+        href="#pesquisa" role="tab" aria-controls="nav-pesquisa" aria-selected="false">Pesquisar Postagens</a>
 
+    </div>
+  </nav>
+<!-- Aba de navegação Postagem -->
+
+<div class="tab-content mt-5" id='nav-tabContent'>
+  <div class="tab-pane fade show active" id='todasPostagens' role="tabpanel" aria-labelledby="nav-todasPostagens">
+<!-- Card Postagem -->
+<div class="card" *ngFor='let tema of listasTema'>
+  <div class="card-header" *ngFor='let item of tema.postagem'>
+    <div>
+      <div>
+        <img src="{{item.usuario.foto}}"alt="foto de user" width="50px" height="50px" class="img-fluid rounded-circle">
+      </div>
+      {{item.usuario.nome}}
+    </div>
+    <div>
+      <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
+          'HH:mm'}}</small>></p>
+    </div>
+  </div>
+  <div class="card-body" *ngFor='let item of tema.postagem'>
+    <blockquote class="blockquote mb-0">
+      <h5 class="card-title m-0">{{item.titulo}}</h5>
+      <p class="card-text mt-3">{{item.corpo}}</p>
+      <footer class="blockquote-footer">{{item.tema.nome}}</footer>
+
+    </blockquote>
+  </div>
+</div>
+
+</div>
+  </div>
+
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="Titulo">Titulo</label>
+          <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo"
+            placeholder="Digite o titulo">
         </div>
-    </nav>
-
-
-    <div class="card">
-        <div class="card-header">
-          Citação
+        <div class="form-group">
+          <label for="Corpo">Texto</label>
+          <textarea [(ngModel)]="postagem.corpo" class="form-control" name="corpo" id="corpo" rows="3"></textarea>
         </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">Alguém famoso em <cite title="Título da fonte">Título da fonte</cite></footer>
-          </blockquote>
+        <div class="form-group">
+          <label for="Tema">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">Cadastre um novo</a>: </label>
+          <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema" (change)="findByIdTema()">
+            <option *ngFor="let item of listasTema" value="{{item.id}}">{{item.nome}}</option>
+          </select>
         </div>
       </div>
-      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="publicar()" data-dismiss="modal">Publicar</button>
+      </div>
+    </div>
+  </div>
 </div>
