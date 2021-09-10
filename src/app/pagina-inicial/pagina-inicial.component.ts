@@ -21,7 +21,7 @@ export class PaginaInicialComponent implements OnInit {
   tema: Tema = new Tema()
   listasTema: Tema[]
   idTema: number
-  temaInsert: Tema = new Tema()
+
 
   user: Usuario = new Usuario()
   idUser = environment.id
@@ -69,8 +69,8 @@ findByIdUser(){
 }
 
 publicar(){
-  this.temaInsert.id = this.idTema
-  this.postagem.tema = this.temaInsert
+  this.tema.id = this.idTema
+  this.postagem.tema = this.tema
 
   this.user.id = this.idUser
   this.postagem.usuario = this.user
