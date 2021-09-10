@@ -30,7 +30,7 @@ export class PostagemEditComponent implements OnInit {
     window.scroll(0,0)
 
     if(environment.token == ""){
-      this.router.navigate(["/entar"])
+      this.router.navigate(["/entrar"])
     }
     let id = this.route.snapshot.params ["id"]
     this.findByIdPostagem(id)
@@ -60,7 +60,7 @@ export class PostagemEditComponent implements OnInit {
     this.postagemService.putPostagem(this.postagem).subscribe ((resp: Postagem) =>{
       this.postagem = resp
       alert ("Postagem atualizada com sucesso!")
-      this.router.navigate(["/inicio"])
+      this.router.navigate(["/pagina-inicial"])
     })
   }
 
