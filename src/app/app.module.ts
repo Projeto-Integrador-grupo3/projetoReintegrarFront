@@ -17,6 +17,7 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
 import { TemaComponent } from './tema/tema.component';
 import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     PostagemDeleteComponent,
     TemaDeleteComponent,
     TemaComponent,
-    PaginaInicialComponent
+    PaginaInicialComponent,
+    HomeComponent
     
    
   ],
