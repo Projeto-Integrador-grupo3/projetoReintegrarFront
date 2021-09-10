@@ -52,7 +52,7 @@
         <div class="card-header mb-3 mt-3" *ngFor='let item of listasPostagem'>
           <div>
             <div>
-              <img src="{{user.foto}}" alt="foto de user" width="50px" height="50px"
+              <img src="{{item.usuario.foto}}" alt="foto de user" width="50px" height="50px"
                 class="img-fluid rounded-circle">
             </div>
             {{item.usuario.nome}}
@@ -99,7 +99,6 @@
               <h5 class="card-title m-0">{{item.titulo}}</h5>
               <p class="card-text mt-3">{{item.corpo}}</p>
               </blockquote>
-         
               <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
               <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
             
@@ -116,7 +115,7 @@
             <div class="card mt-3 mb-3" *ngFor='let tema of listasTema'>
               <div class="card-header mb-3 mt-3" *ngFor='let item of tema.postagem'>
                   <div>
-                    <img src="{{user.foto}}" alt="foto de user" width="50px" height="50px"
+                    <img src="{{item.usuario.foto}}" alt="foto de user" width="50px" height="50px"
                       class="img-fluid rounded-circle">
                   </div>
                     {{item.usuario.nome}}
