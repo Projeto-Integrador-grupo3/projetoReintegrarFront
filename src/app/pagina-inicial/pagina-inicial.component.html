@@ -25,28 +25,28 @@
 </div>
 
 <!-- Aba de navegação Postagem -->
-<div class="container mb-5 mt-5">
+<div class="container mb-5 mt-5" id="postagens">
 
   <nav>
     <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
 
-      <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab" data-toggle="tab"
+      <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab"
         href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</a>
 
-      <a (click)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab"
+      <a (click)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab"
         data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens"
         aria-selected="false">Minhas
         Postagens</a>
 
-      <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-pesquisa-tab" data-toggle="tab"
-        href="#pesquisa" role="tab" aria-controls="nav-pesquisa" aria-selected="false">Pesquisar Postagens</a>
+      <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-contact-tab" data-toggle="tab"
+        href="#pesquisaTema" role="tab" aria-controls="nav-pesquisa" aria-selected="false">Pesquisar Postagens</a>
 
     </div>
   </nav>
 
   <!--Todas as Postagens-->
   <div class="tab-content mt-5" id='nav-tabContent'>
-    <div class="tab-pane fade show active" id='todasPostagens' role="tabpanel" aria-labelledby="nav-todasPostagens">
+    <div class="tab-pane fade show active" id='todasPostagens' role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
       <!-- Card Postagem -->
       <div class="card mt-3 mb-3">
         <div class="card-header mb-3 mt-3" *ngFor='let item of listasPostagem'>
@@ -66,7 +66,7 @@
             <blockquote class="blockquote mb-0">
               <h5 class="card-title m-0">{{item.titulo}}</h5>
               <p class="card-text mt-3">{{item.corpo}}</p>
-              <footer class="blockquote-footer">{{item.tema.nome}}</footer>
+              <footer class="blockquote-footer">Tema: {{item.tema.nome}}</footer>
             </blockquote>
           </div>
         </div>
@@ -75,33 +75,36 @@
 
     <!--Tab Minhas Postagens-->
 
-    <div class="tab-pane fade show active" id='minhasPostagens' role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+    <div class="tab-pane fade show active" id='minhasPostagens' role="tabpanel"
+      aria-labelledby="nav-minhasPostagens-tab">
 
       <!-- Card Postagem -->
       <div class="card mt-3 mb-3">
-        <div class="card-header mb-3 mt-3" *ngFor='let item of user.postagem'>
+        <div class="card-header mb-3 mt-3" *ngFor='let item of user.postagens'>
           <div>
             <div>
-              <img src="{{item.usuario.foto}}" alt="foto de user" width="50px" height="50px"
+              <img src="{{user.foto}}" alt="foto de user" width="50px" height="50px"
                 class="img-fluid rounded-circle">
             </div>
-          </div>
-          <div>
-            {{item.usuario.nome}}
+            
           </div>
           <div class="text-end">
             <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
                 'HH:mm'}}</small></p>
           </div>
+
           <hr>
           <div class="card-body">
             <blockquote class="blockquote mb-0">
               <h5 class="card-title m-0">{{item.titulo}}</h5>
               <p class="card-text mt-3">{{item.corpo}}</p>
-              <footer class="blockquote-footer">{{item.tema.nome}}</footer>
+              <footer class="blockquote-footer"> Tema: {{item.tema.nome}}</footer>
             </blockquote>
-            <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
-            <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+            <div>
+              <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
+              <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -109,6 +112,8 @@
     </div>
 
   </div>
+</div>
+  
 
 
 

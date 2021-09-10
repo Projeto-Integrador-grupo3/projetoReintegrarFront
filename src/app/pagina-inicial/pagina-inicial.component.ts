@@ -21,6 +21,7 @@ export class PaginaInicialComponent implements OnInit {
   tema: Tema = new Tema()
   listasTema: Tema[]
   idTema: number
+  temaInsert: Tema = new Tema()
 
 
   user: Usuario = new Usuario()
@@ -65,12 +66,13 @@ getAllPostagens(){
 findByIdUser(){
   this.auth.getByIdUser(this.idUser).subscribe ((resp: Usuario) => {
     this.user = resp 
+    console.log(this.user)
   })
 }
 
 publicar(){
-  this.tema.id = this.idTema
-  this.postagem.tema = this.tema
+  this.temaInsert.id = this.idTema
+  this.postagem.tema = this.temaInsert
 
   this.user.id = this.idUser
   this.postagem.usuario = this.user

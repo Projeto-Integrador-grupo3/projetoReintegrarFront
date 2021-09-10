@@ -10,5 +10,5 @@ export class Usuario{
         public senha:string
         public tipo:string
         public foto:string
-        public postagem: Postagem[]
+        public postagens: Postagem[]
 }

@@ -9,11 +9,21 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
   providedIn: 'root'
 })
 export class AuthService {
+  static cadastrar(user: Usuario) {
+    throw new Error('Method not implemented.');
+  }
+  static getByIdUser(idUser: number) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(
     private http:HttpClient
   ) { }
 
+  token = {
+    headers: new HttpHeaders().set("Authorization", environment.token)
+  }
+  
 
     entrar(usuarioLogin:UsuarioLogin): Observable<UsuarioLogin>{
       return this.http.post<UsuarioLogin>('http://localhost:8080/usuarios/logar/', usuarioLogin)
@@ -24,7 +34,7 @@ export class AuthService {
     }
 
     getByIdUser(id: number): Observable<Usuario>{
-      return this.http.get<Usuario>(`http://localhost:8080/usuarios/${id}`)
+      return this.http.get<Usuario>(`http://localhost:8080/usuarios/${id}`, this.token)
     }
     
 
