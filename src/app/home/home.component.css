@@ -1,0 +1,15 @@
+.fontbold{
+    font-weight: bold;
+}
+.darkbackground{
+    background-color: black;
+}
+.fTitulo{
+    font-size: 25;
+}
+.fIcon{
+    font-size: 80pt;
+}
+.centralizar{
+    text-align: center;
+}
