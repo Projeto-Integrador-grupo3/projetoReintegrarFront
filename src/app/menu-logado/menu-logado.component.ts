@@ -20,6 +20,14 @@ export class MenuLogadoComponent implements OnInit {
     console.log(environment.foto)
     console.log(this.foto)
   }
+
+  sobreNos(){
+    this.router.navigate(['/home'])
+  }
+
+  contatoFn(){
+    this.router.navigate(['/home'])
+  }
   
   sair(){
     this.router.navigate(['/entrar'])

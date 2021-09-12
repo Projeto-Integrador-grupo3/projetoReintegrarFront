@@ -7,38 +7,31 @@
 
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto d-flex align-items-center">
-            <a routerLink="/pagina-inicial">
-                <img src="../assets/img/deerLogoBgWhite.png" alt="foto de user" width="50px" height="50px"
-                class="img-fluid rounded-circle">
+            <a routerLink="/home">
+                <img src="../../assets/img/deerLogoWhiteBg.jpg" alt="foto de user" width="50px" height="50px"
+                class="img-fluid rounded-circle" routerLink="/home">
             </a>
-            <!--<li class="nav-item pl-3">
-                <a href="">
-                    <p class="text-light fs-16 --- m-0">
-                        <i class="fa fa-pencil-square-o " aria-hidden="true"></i>
-                    </p>
-                </a>
-            </li>-->
         </ul>
         <ul class="navbar-nav d-flex align-items-center">
             <li class="nav-item">
-                <a class="nav-link text-light pl-4" href="#">Página Inicial</a>
+                <a class="nav-link text-light pl-4 fTab" routerLink="/home">Página Inicial</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light pl-4" href="#">Sobre Nós</a>
+                <a class="nav-link text-light pl-4 fTab" href="#sobreNosId" id="">Sobre Nós</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light pl-4" href="#">Contato</a>
+                <a class="nav-link text-light pl-4 fTab" href="#contatoId">Contato</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto d-flex align-items-center">
             <li class="nav-item">
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-light">Entrar</button>
+                    <button type="submit" class="btn btn-light" routerLink='/entrar'>Entrar</button>
                 </div>
             </li>
             <li class="nav-item pl-3">
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-light">Cadastrar</button>
+                    <button type="submit" class="btn btn-light" routerLink='/cadastrar'>Cadastrar</button>
                 </div>
             </li>
         </ul>

@@ -1,15 +1,33 @@
 .fontbold{
     font-weight: bold;
 }
+
 .darkbackground{
     background-color: black;
 }
-.fTitulo{
-    font-size: 25;
+
+.whitebackground{
+    background-color: white;
 }
+
+.fTitulo{
+    font-size: 25pt;
+}
+
 .fIcon{
     font-size: 80pt;
 }
+
 .centralizar{
     text-align: center;
+}
+
+.jumbo{
+    background-image: url(https://www.fecap.br/files/img/background/visite.jpg);
+    background-size: cover;
+    height: 589px;
+}
+
+.fSize{
+    font-size: 13pt;
 }
