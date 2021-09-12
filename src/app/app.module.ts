@@ -18,6 +18,7 @@ import { TemaComponent } from './tema/tema.component';
 import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HomeComponent } from './home/home.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 @NgModule({
@@ -36,13 +37,14 @@ import { HomeComponent } from './home/home.component';
     PaginaInicialComponent,
     HomeComponent
     
-   
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy,

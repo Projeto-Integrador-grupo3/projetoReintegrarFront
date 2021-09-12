@@ -26,6 +26,9 @@ export class PaginaInicialComponent implements OnInit {
 
   user: Usuario = new Usuario()
   idUser = environment.id
+
+  key='data'
+  reverse=true
   
   constructor(
     private router: Router,
