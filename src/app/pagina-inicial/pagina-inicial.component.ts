@@ -22,6 +22,8 @@ export class PaginaInicialComponent implements OnInit {
   listasTema: Tema[]
   idTema: number
   temaInsert: Tema = new Tema()
+  tituloPost: string 
+  nomeTema: string
 
 
   user: Usuario = new Usuario()
@@ -71,6 +73,28 @@ findByIdUser(){
     this.user = resp 
     console.log(this.user)
   })
+}
+findByTituloPostagem(){
+
+  if(this.tituloPost==''){
+    this.getAllPostagens()
+
+  } else{
+    this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=>{
+      this.listasPostagem=resp
+    })
+  }
+ 
+}
+findByNomeTema(){
+  if(this.nomeTema==''){
+    this.getAllTemas()
+    }else{
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp:Tema[])=>{
+      this.listasTema=resp
+      })
+    }
+
 }
 
 publicar(){
